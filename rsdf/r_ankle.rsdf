@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<robot name="RFootSole">
+  
+  <planar_surface name="RFullSole" link="r_ankle">
+    <origin rpy="0.0 -0.0 0.0" xyz="0.23762772977352142 -0.076765276491642 -0.449668824672699" />
+    <points>
+      <point xy="-0.7854394316673279 0.3994801640510559" />
+        <point xy="-0.7722090482711792 -0.44084951281547546" />
+        <point xy="0.7867947220802307 -0.45514148473739624" />
+        <point xy="0.7708538770675659 0.4965108633041382" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+</robot>
