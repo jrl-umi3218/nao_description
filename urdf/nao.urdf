@@ -1418,4 +1418,17 @@
     <axis xyz="0 0 1.0"/>
     <mimic joint="LHand" multiplier="0.999899" offset="0"/>
   </joint>
+  <link name="xtion_link">
+    <visual name="asus_xtion">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nao_description/meshes/V40/ASUS_XTION.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="xtion_joint" type="fixed">
+    <parent link="Head"/>
+    <child link="xtion_link"/>
+    <origin rpy="3.09123 2.72778 3.0839" xyz="0.00322046 0.0402703 0.148005"/>
+  </joint>
 </robot>
