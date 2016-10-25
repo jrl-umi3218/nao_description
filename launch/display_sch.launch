@@ -1,0 +1,19 @@
+<launch>
+	<arg name="model" value="$(find nao_description)/urdf/nao.urdf"/>
+	<arg name="gui" default="True" />
+	<param name="robot_description" textfile="$(arg model)" />
+	<param name="use_gui" value="$(arg gui)"/>
+
+  <rosparam param="sch_visualization/robot_params" subst_value="true">
+   - "NAO"
+  </rosparam>
+  <rosparam param="sch_visualization/filtered_convexes">
+  </rosparam>
+  <node name="sch_visualization" pkg="sch_visualization_ros" type="sch_visualizer" />
+
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find nao_description)/launch/display.rviz"/>
+
+</launch>
+
