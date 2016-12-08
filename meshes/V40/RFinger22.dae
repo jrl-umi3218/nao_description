@@ -5,15 +5,29 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.71.0 commit date:2014-06-12, commit time:18:39, hash:169c95b</authoring_tool>
     </contributor>
-    <created>2016-09-27T17:41:10</created>
-    <modified>2016-09-27T17:41:10</modified>
+    <created>2016-12-08T16:56:35</created>
+    <modified>2016-12-08T16:56:35</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
-  <library_images/>
+  <library_images>
+    <image id="textureNAO_png" name="textureNAO_png">
+      <init_from>textureNAO.png</init_from>
+    </image>
+  </library_images>
   <library_effects>
     <effect id="RFinger22UV-effect">
       <profile_COMMON>
+        <newparam sid="textureNAO_png-surface">
+          <surface type="2D">
+            <init_from>textureNAO_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="textureNAO_png-sampler">
+          <sampler2D>
+            <source>textureNAO_png-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -23,7 +37,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="textureNAO_png-sampler" texcoord="RPhalax_5-mesh-map-0"/>
             </diffuse>
             <specular>
               <color sid="specular">0.25 0.25 0.25 1</color>
@@ -126,8 +140,12 @@
         <instance_geometry url="#RPhalax_5-mesh">
           <bind_material>
             <technique_common>
-              <instance_material symbol="RFinger22UV-material" target="#RFinger22UV-material"/>
-              <instance_material symbol="NaoMat_MainSkin-material" target="#NaoMat_MainSkin-material"/>
+              <instance_material symbol="RFinger22UV-material" target="#RFinger22UV-material">
+                <bind_vertex_input semantic="RPhalax_5-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="NaoMat_MainSkin-material" target="#NaoMat_MainSkin-material">
+                <bind_vertex_input semantic="RPhalax_5-mesh-map-0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
             </technique_common>
           </bind_material>
         </instance_geometry>

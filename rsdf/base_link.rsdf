@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<robot name="base_link">
+  
+  <planar_surface name="BaseLinkPlane" link="base_link">
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    <points>
+      <point xy="-1.0 -1.0" />
+        <point xy="1.0 -1.0" />
+        <point xy="1.0 1.0" />
+        <point xy="-1.0 1.0" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+</robot>
