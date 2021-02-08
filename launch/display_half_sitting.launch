@@ -1,5 +1,5 @@
 <launch>
-  <arg name="model" value="$(find hrp4_description)/urdf/hrp4.urdf"/>
+  <arg name="model" value="$(find nao_description)/urdf/nao.urdf"/>
   <arg name="gui" default="True" />
   <param name="robot_description" textfile="$(arg model)" />
   <param name="use_gui" value="$(arg gui)"/>
@@ -58,5 +58,5 @@
   </node>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hrp4_description)/launch/display.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find nao_description)/launch/display.rviz"/>
 </launch>
