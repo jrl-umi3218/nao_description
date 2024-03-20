@@ -1,21 +1,19 @@
-<package>
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>nao_description</name>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <description>This package provides URDF, SRDF models for the NAO robot.</description>
   <maintainer email="arnaud.tanguy@lirmm.fr">Arnaud TANGUY</maintainer>
 
-  <license>Not distributed</license>
+  <license>TODO</license>
 
-  <url type="website">None</url>
-  <!-- <url type="bugtracker"></url> -->
+  <buildtool_depend condition="$ROS_VERSION == 1">catkin</buildtool_depend>
+  <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
 
-  <author email="arnaud.tanguy@lirmm.fr">Arnaud TANGUY</author>
-
-  <!-- Dependencies which this package needs to build itself. -->
-  <buildtool_depend>catkin</buildtool_depend>
-
-<export>
-    <rosdoc config="rosdoc.yaml"/>
-</export>
+   <export>
+    <build_type condition="$ROS_VERSION == 1">catkin</build_type>
+    <build_type condition="$ROS_VERSION == 2">ament_cmake</build_type>
+  </export>
 
 </package>
