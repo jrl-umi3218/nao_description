@@ -12,4 +12,27 @@
     <material name="plastic" />
   </planar_surface>
 
+  <planar_surface name="LeftFootCenter" link="l_ankle">
+    <origin rpy="0.0 0.0 0.0" xyz="0.0215 0.005 -0.04476714879274368" />
+    <points>
+      <point xy="-0.0645 0.04" />
+        <point xy="-0.0645 -0.04" />
+        <point xy="0.0645 -0.04" />
+        <point xy="0.0645 0.04" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+
+  <planar_surface name="LeftFoot" link="l_ankle">
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.04476714879274368" />
+    <points>
+      <point xy="-0.043 0.045" />
+        <point xy="-0.043 -0.035" />
+        <point xy="0.086 -0.035" />
+        <point xy="0.086 0.045" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
 </robot>

@@ -2,12 +2,34 @@
 <robot name="r_ankle">
   
   <planar_surface name="RFullSole" link="r_ankle">
-    <origin rpy="0.0 -0.0 0.0" xyz="0.023890957236289978 -0.004905506037175655 -0.04476714879274368" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.023890957236289978 -0.004905506037175655 -0.04476714879274368" />
     <points>
       <point xy="-0.05537781864404678 0.03925684839487076" />
         <point xy="-0.053655486553907394 -0.04681355133652687" />
         <point xy="0.05748677998781204 -0.034639131277799606" />
         <point xy="0.05154652148485184 0.04219583794474602" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+  <planar_surface name="RightFootCenter" link="r_ankle">
+    <origin rpy="0.0 0.0 0.0" xyz="0.0215 -0.005 -0.04476714879274368" />
+    <points>
+      <point xy="-0.0645 0.04" />
+        <point xy="-0.0645 -0.04" />
+        <point xy="0.0645 -0.04" />
+        <point xy="0.0645 0.04" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+  <planar_surface name="RightFoot" link="r_ankle">
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.04476714879274368" />
+    <points>
+      <point xy="-0.043 0.035" />
+        <point xy="-0.043 -0.045" />
+        <point xy="0.086 -0.045" />
+        <point xy="0.086 0.035" />
     </points>
     <material name="plastic" />
   </planar_surface>
